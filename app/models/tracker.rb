@@ -1,7 +1,7 @@
 class Tracker < ApplicationRecord
-  has_many :subtrackers
+  belongs_to :organisation
 
-  def count
-    subtrackers.pluck(:count).reduce(:+)
+  def increment
+    count += 1
   end
 end
