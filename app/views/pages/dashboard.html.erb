@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+
+      <div class="input">
+        <label for="company">Comapany:</label>
+        <input type="text" id="company">
+      </div>
+      <p>Copy and paste the following line into your headers:</p>
+
+<pre><code class="language-html">
+  <%= <<-HTML
+      <header>http://www.chestnut.com/tracker&referrer=your_company</header>
+    HTML
+  %>
+</code></pre>
+
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+</div>
+
+<script>
+  (function updateReferrer() {
+      form = document.getElementById('company')
+    node = document.querySelector('.language-html')
+    url = "http://www.chestnut.com/tracker&referrer="
+    form.addEventListener('input', () => {
+      node.innerText = url + form.value
+    })
+  }).call()
+</script>
