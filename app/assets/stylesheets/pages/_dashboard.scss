@@ -1,0 +1,78 @@
+.sidebar {
+  width: 240px;
+  background-color: white;
+  height: 100vh;
+  h2 {
+    color: $blue;
+  }
+
+  .svg-padding {
+    padding: 20px;
+  }
+
+  .active {
+    color: $blue !important;
+    border-right: 2px solid $blue;
+    // or https://stackoverflow.com/questions/4131490/any-way-to-limit-border-length
+  }
+
+    .icon {
+      display: flex;
+      color: #8B94A3;
+      i, p {
+        padding: 20px;
+      }
+
+      i {
+        min-width: 72px;
+      }
+
+      p {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 0px;
+      }
+
+      h2 {
+        font-weight: bold;
+        font-family: Montserrat;
+        font-style: normal;
+        padding-top: 28px;
+        font-size: 24px;
+      }
+    }
+  .icons {
+    margin-top: 35%;
+    display: flex;
+    flex-direction: column;
+
+  }
+}
+
+.welcome {
+  width: 720px;
+  height: 200px;
+  background-color: $green;border-radius: 20px;
+}
+
+.dashboard {
+  display: flex;
+}
+
+.main-page {
+  padding: 30px;
+  .dashboard-title {
+    display: flex;
+    justify-content: space-between;
+    h2 {
+      color: black;
+    }
+    #date {
+      color: $gray;
+    }
+  }
+
+}
+
