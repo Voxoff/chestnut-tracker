@@ -1,63 +1,70 @@
 <div class="dashboard">
-<div class="sidebar">
-  <div class="icon ml-2">
-    <div class="svg-padding">
-    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="24" cy="24" r="24" fill="#C4C4C4"/>
-    <line x1="6.64645" y1="40.6464" x2="40.6464" y2="6.64645" stroke="#8B94A3"/>
-    <line y1="-0.5" x2="48.0833" y2="-0.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 7 7)" stroke="#8B94A3"/>
-    </svg>
-    </div>
-
-
-  <h2>Chestnut</h2></div>
-  <div class="icons ml-2">
-    <div class="icon active"><i class="fas fa-columns fa-2x"></i><p>Dashboard</p></div>
-    <div class="icon"><i class="fas fa-2x fa-calculator"></i><p>Calculate</p></div>
-    <div class="icon"><i class="fas fa-2x fa-tree"></i><p>Offset</p></div>
-    <div class="icon"><i class="fas fa-2x fa-cog"></i><p>Settings</p></div>
-  </div>
-</div>
-<div class="main-page">
-  <div class="dashboard-title d-flex">
-    <h2>Dashboard</h2>
-    <h2 id="date"><%= DateTime.now.strftime("%C %B %Y") %></h2>
-  </div>
-
-<div class="welcome">
-  <p>First time?</p>
-  <p>Copy and paste the following line into your headers:</p>
-
-</div>
-  <pre><code class="language-html">
-    <%= <<-HTML
-<script>
-  (function(d,s){var u=window.location.href,e=d.getElementsByTagName(s)[0],g=d.createElement(s);
-    g.async=true;
-    g.src='http://localhost:3000/api/v1/trackers/Pledge?url='+u;
-    e.parentNode.insertBefore(g,e);
-  })(document, 'script')
-    </script>
-
-      HTML
-    %>
-  </code></pre>
-</div>
-<% if false %>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-10">
-
-      <div class="input">
-        <label for="company">Comapany:</label>
-        <input type="text" id="company">
+  <div class="sidebar">
+    <div class="icon ml-2">
+      <div class="svg-padding">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="24" fill="#C4C4C4"/>
+          <line x1="6.64645" y1="40.6464" x2="40.6464" y2="6.64645" stroke="#8B94A3"/>
+          <line y1="-0.5" x2="48.0833" y2="-0.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 7 7)" stroke="#8B94A3"/>
+        </svg>
       </div>
 
 
+    <h2>Chestnut</h2></div>
+    <div class="icons ml-2">
+      <div class="icon active"><i class="fas fa-columns fa-2x"></i><p>Dashboard</p></div>
+      <div class="icon"><i class="fas fa-2x fa-calculator"></i><p>Calculate</p></div>
+      <div class="icon"><i class="fas fa-2x fa-tree"></i><p>Offset</p></div>
+      <div class="icon"><i class="fas fa-2x fa-cog"></i><p>Settings</p></div>
     </div>
-    <div class="col-sm-1"></div>
   </div>
-</div>
-<% end %>
+  <div class="main-page">
+    <div class="dashboard-title d-flex">
+      <h2>Dashboard</h2>
+      <h2 id="date"><%= @date %></h2>
+    </div>
+
+    <div class="welcome">
+      <div class="welcome-text">
+        <p>First time?</p>
+        <p>Copy and paste the following line into your headers:</p>
+      </div>
+      <%= render "welcome_temp_svg", class: "welcome_temp_svg" %>
+    </div>
+    <pre>
+      <code class="language-html">
+      <%= render 'tracker' %>
+    </code>
+  </pre>
+  </div>
+
+  <div class="right-bar">
+    <div class="icon">
+      <h2>Log Out</h2>
+      <i class="fas fa-2x fa-sign-out-alt"></i>
+    </div>
+    <div class="temp-svg">
+      <%= render "temp_svg" %>
+    </div>
+  </div>
+
+
+
+          <% if false %>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-10">
+
+                <div class="input">
+                  <label for="company">Comapany:</label>
+                  <input type="text" id="company">
+                </div>
+
+
+              </div>
+              <div class="col-sm-1"></div>
+            </div>
+          </div>
+          <% end %>
 </div>

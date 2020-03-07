@@ -8,6 +8,7 @@ require("highlightjs-badge")
 
 document.addEventListener('DOMContentLoaded', (event) => {
   document.querySelectorAll('pre code').forEach((block) => {
+    // block = block.textContent.trim()
     hljs.highlightBlock(block);
     window.highlightJsBadge();
   });

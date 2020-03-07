@@ -5,5 +5,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @date = DateTime.now.strftime("%C %B %Y")
   end
 end

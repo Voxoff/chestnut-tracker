@@ -1,7 +1,9 @@
 TECH DEBT ALREADY
 
-Refactor registrations and sessions controller (and views) to be inside a devise foldere
+1. Refactor registrations and sessions controller (and views) to be inside a devise folder
 
-Put highlight js in pack tag or better npm package
+2. Put highlight js in pack tag or better npm package
 
-WTF is turbolinks vs DOMContentLoaded
+3. WTF is turbolinks vs DOMContentLoaded
+
+4. Pre tag indenting

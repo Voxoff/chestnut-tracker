@@ -28,19 +28,19 @@
       }
 
       p {
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: bold;
         font-size: 20px;
         margin-bottom: 0px;
       }
 
       h2 {
-        font-weight: bold;
-        font-family: Montserrat;
-        font-style: normal;
         padding-top: 28px;
         font-size: 24px;
+      }
+
+      p, h2 {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
       }
     }
   .icons {
@@ -54,7 +54,19 @@
 .welcome {
   width: 720px;
   height: 200px;
-  background-color: $green;border-radius: 20px;
+  background-color: $green;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  // position: relative;
+
+  .welcome_temp_svg{
+    // position:absolute;
+    // top: 5px;
+    // right: 5px;
+  }
 }
 
 .dashboard {
@@ -62,7 +74,7 @@
 }
 
 .main-page {
-  padding: 30px;
+  padding: 50px;
   .dashboard-title {
     display: flex;
     justify-content: space-between;
@@ -71,8 +83,53 @@
     }
     #date {
       color: $gray;
+      font-weight: lighter;
     }
   }
 
+  p {
+    padding: 20px;
+  }
+
+  pre {
+    width: 720px;
+    border-radius: 20px;
+    margin-top: 40px;
+    white-space: pre-wrap;
+  }
+
+
 }
 
+  .right-bar {
+    width: 400px;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    right: 0px;
+
+    .icon {
+      display: flex;
+      justify-content: flex-end;
+      border-bottom: 2px solid $gray;
+      margin-top: 22px;
+      h2, i {
+        color: $gray;
+        padding-top: 24px;
+      }
+      i {
+        padding: 20px;
+      }
+      h2 {
+        font-family: Montserrat;
+        font-style: normal;
+        font-size: 24px;
+      }
+    }
+
+    .temp-svg {
+      display: flex;
+      justify-content: center;
+      margin-top: 200px;
+    }
+  }
