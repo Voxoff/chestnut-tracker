@@ -10,7 +10,6 @@ class Api::V1::TrackersController < ApplicationController
     @tracker = Tracker.find_or_create_by!(referrer: strong_params[:url], organisation: organisation)
     track_size if @tracker.count.zero?
     @tracker.increment!(:count)
-    puts params.permit(:length)[:length]
     return 204
   end
 
@@ -30,7 +29,7 @@ class Api::V1::TrackersController < ApplicationController
 
     items = response.dig("lighthouseResult", "audits", "network-requests", "details", "items")
     transfer_sizes = items.map { |hash| hash["transferSize"]} if items
-    total_size = transfer_sizes.reduce(:+) if transfer_sizes
+    total_size = transfer_sizes.compact.reduce(:+) if transfer_sizes
     Tracker.update(size: total_size) if total_size
   end
 end
