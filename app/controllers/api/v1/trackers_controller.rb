@@ -7,11 +7,13 @@ class Api::V1::TrackersController < ApplicationController
     # return unless params[:url]
 
     organisation = Organisation.find_by(name: strong_params[:id])
-    return puts "Unidentified organisation" unless organisation
+    return logger.info "Unidentified organisation" unless organisation
     @tracker = Tracker.find_or_create_by(referrer: strong_params[:url], organisation: organisation)
     track_size if @tracker.count.zero?
     @tracker.increment!(:count)
-    return 204
+
+    # Avoid MIME type mismatch
+    # headers["Content-Type"] = "application/javascript"
   end
 
   def strong_params
@@ -23,7 +25,7 @@ class Api::V1::TrackersController < ApplicationController
       google_api = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url="
       response = HTTParty.get(google_api + Tracker.first.referrer)
     rescue => e
-      # Anything else to do??
+      # Anything else to do?
       puts e
     end
     return unless response
