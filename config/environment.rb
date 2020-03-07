@@ -1,3 +1,7 @@
+Rails.logger = Logger.new(STDOUT)
+Rails.logger.level = Logger::DEBUG
+Rails.logger.datetime_format = "%Y-%m-%d %H:%M:%S"
+
 # Load the Rails application.
 require_relative 'application'
 
