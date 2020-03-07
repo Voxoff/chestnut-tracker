@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_02_24_140054) do
 
   create_table "organisations", force: :cascade do |t|
     t.string "site"
+    t.string "name"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_02_24_140054) do
     t.bigint "organisation_id", null: false
     t.integer "count", default: 0
     t.string "referrer"
+    t.integer "size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["organisation_id"], name: "index_trackers_on_organisation_id"

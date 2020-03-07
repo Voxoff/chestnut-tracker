@@ -1,5 +1,6 @@
 class Organisation < ApplicationRecord
-  has_many :trackers
+  belongs_to :user
+  has_many :trackers, dependent: :destroy
 
   def count
     trackers.pluck(:count).reduce(:+)

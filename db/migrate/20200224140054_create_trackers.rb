@@ -4,6 +4,7 @@ class CreateTrackers < ActiveRecord::Migration[6.0]
       t.references :organisation, null: false, foreign_key: true
       t.integer :count, default: 0
       t.string :referrer
+      t.integer :size
 
       t.timestamps
     end

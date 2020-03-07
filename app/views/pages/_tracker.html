@@ -1,4 +1,4 @@
 <script>
-  (function(d,s){var u=window.location.href,e=d.getElementsByTagName(s)[0],g=d.createElement(s);g.async=true;g.src='http://localhost:3000/api/v1/trackers/Pledge?url='+u;e.parentNode.insertBefore(g,e);
+  (function(d,s){var u=window.location.href,e=d.getElementsByTagName(s)[0],g=d.createElement(s),l=d.documentElement.innerHTML.length;g.async=true;g.src='http://localhost:3000/api/v1/trackers/Pledge?url='+u+'&length='+l;e.parentNode.insertBefore(g,e);
   })(document, 'script')
 </script>
