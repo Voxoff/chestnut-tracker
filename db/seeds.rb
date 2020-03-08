@@ -1,6 +1,6 @@
 User.destroy_all
 
-User.create!(email: 'god@chestnut.co.uk', password: 'password')
+User.create!(email: 'god@chestnut.co.uk', password: '123123', admin: true)
 Organisation.create!(name: "Pledge", user: User.first)
 
 User.create!(email: 'test@test.com', password: '123123')

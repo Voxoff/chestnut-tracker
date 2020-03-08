@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: "registrations", sessions: "sessions" }
+  ActiveAdmin.routes(self)
+  devise_for :users
   root to: 'pages#home'
   get 'dashboard', to: 'pages#dashboard'
 
