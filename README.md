@@ -11,6 +11,11 @@ TECH DEBT
 5. Google Page Insights API key
 
 
+Tech Explanations for decisions
+1. window.location.href https://stackoverflow.com/questions/1034621/get-the-current-url-with-javascript
+2. For no JS: https://stackoverflow.com/questions/13079666/developing-a-tracking-pixel or IFRAME? https://docs.upclick.com/show/english/merchants/tracking/pixel_url_tracking.aspx
+
+
 Problems with header idea
 1. Access to certain pages prohibited based on access
 2. Params
