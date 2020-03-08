@@ -18,6 +18,9 @@ class Api::V1::TrackersController < ApplicationController
   private
 
   def no_script
+    # From image tag
+    # ActionController::MissingExactTemplate (Api::V1::TrackersController#show is missing a template for request formats: text/html):
+
     if no_script_param == 1
       referrer = request.headers[:HTTP_REFERER]
       # https://stackoverflow.com/questions/6880659/in-what-cases-will-http-referer-be-empty
