@@ -5,7 +5,7 @@ class Api::V1::TrackersController < ApplicationController
     # referrer_header = request.headers["REQUEST_URI"]
     # request.headers[:HTTP_REFERER]
     # return unless params[:url]
-    puts request.headers
+    puts request.headers.to_h
     organisation = Organisation.find_by(name: strong_params[:id])
     return logger.info "Unidentified organisation" unless organisation
     @tracker = Tracker.find_or_create_by(referrer: strong_params[:url], organisation: organisation)
