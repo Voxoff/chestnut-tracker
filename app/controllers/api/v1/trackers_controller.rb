@@ -2,10 +2,11 @@ class Api::V1::TrackersController < ApplicationController
   skip_before_action :authenticate_user!
 
   def show
-    # referrer_header = request.headers["REQUEST_URI"]
-    # request.headers[:HTTP_REFERER]
+    puts request.headers["REQUEST_URI"]
+    puts request.headers[:HTTP_REFERER]
     # return unless params[:url]
-    puts request.headers.to_h
+    # binding.pry
+    # puts request.headers.
     organisation = Organisation.find_by(name: strong_params[:id])
     return logger.info "Unidentified organisation" unless organisation
     @tracker = Tracker.find_or_create_by(referrer: strong_params[:url], organisation: organisation)
