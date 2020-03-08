@@ -2,3 +2,8 @@
   (function(d,s){var u=window.location.href,e=d.getElementsByTagName(s)[0],g=d.createElement(s);g.async=true;g.src='http://localhost:3000/api/v1/trackers/Pledsge?url='+u;e.parentNode.insertBefore(g,e);
   })(document, 'script')
 </script>
+
+<script>
+  var u=window.location.href,h = new XMLHttpRequest();
+  Http.open("GET", 'http://localhost:3000/api/v1/trackers/Pledsge?url='+u);Http.send();
+</script>
