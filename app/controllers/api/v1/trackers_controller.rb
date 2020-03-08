@@ -7,7 +7,7 @@ class Api::V1::TrackersController < ApplicationController
     organisation = Organisation.find_by(name: strong_params[:id])
     return logger.info "Unidentified organisation" unless organisation
 
-    @tracker = Tracker.find_or_create_by(referrer: strong_params[:url, organisation: organisation)
+    @tracker = Tracker.find_or_create_by(referrer: strong_params[:url], organisation: organisation)
     TrackSizeJob.perform_now(@tracker) if @tracker.count.zero?
     @tracker.increment!(:count)
 
